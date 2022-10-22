@@ -6,3 +6,5 @@
 - 2. Criar os serviços no docker-compose.
 
 - 3. Criar script de automação de injeção de código malicioso.
+
+- 4. Criar testes e validar.
