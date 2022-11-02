@@ -1,5 +1,7 @@
 version: '3' #Versão do docker compose
 
 services:
-  app:
-    image: php:8.1-alpine
+  app-python:
+    container_name: python-infector
+    image: googlesky/sqlmap:latest
+    command: ["python", "sqlmap.py", "-hh"] #precisa decidir o comando
