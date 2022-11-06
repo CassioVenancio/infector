@@ -15,7 +15,7 @@ class StartScan
         
         $this->createEnv($envUrl);
         
-        shell_exec('./sacan.sh');
+        echo shell_exec('./scan.sh');
     }
 
     private function getUrls(string $urls): array
@@ -29,7 +29,7 @@ class StartScan
     {
         foreach ($urlsList as $urls){
             $url = $urls[0];
-            shell_exec("export URL_ROUTE={$url}");
+            shell_exec("export URL_ROUTE='$url'");
         }
         # definir logica para varios urls
         
