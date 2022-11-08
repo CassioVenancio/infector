@@ -4,34 +4,22 @@ namespace Infector\Scripts;
 
 class StartScan
 {
-    private string $urls;
+    private array $urls;
     public function __construct()
     {
-        $this->urls = require(__DIR__ . "/../../urls-routes.txt");
+        include(__DIR__ . "/../../urls-routes.php");
+        $this->urls = $urls;
     }
     public function exec(): void
-    {
-        $envUrl = $this->getUrls($this->urls);
-        
-        $this->createEnv($envUrl);
+    { 
+        $this->createEnv($this->urls);
         
         echo shell_exec('./scan.sh');
     }
 
-    private function getUrls(string $urls): array
-    {
-        $urlsList = array_filter(explode("\n", $urls));
-
-        return $urlsList;
-    }
-
     private function createEnv(array $urlsList): void
     {
-        foreach ($urlsList as $urls){
-            $url = $urls[0];
-            shell_exec("export URL_ROUTE='$url'");
-        }
-        # definir logica para varios urls
-        
+        $url = $urlsList[0];
+        putenv("URL_ROUTE=$url");
     }
 }
