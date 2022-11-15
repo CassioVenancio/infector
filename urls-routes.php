@@ -1,6 +1,11 @@
 <?php
 
-$urls = [
-    "localhost:8080"
+$urlsAndParams = [
+   "url" => "http://localhost:80/api",
+   "params" => [
+        "assunto" => '',
+        "text" => ''
+   ],
+   "method" => "POST"
 ];
 
