@@ -1,0 +1,5 @@
+<?php
+
+$payloads = [
+    "drop database"
+];
