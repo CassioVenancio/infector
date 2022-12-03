@@ -1,5 +1,5 @@
 <?php
 
 $payloads = [
-    "drop database"
+    "pao'); drop database"
 ];
